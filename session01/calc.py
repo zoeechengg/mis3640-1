@@ -13,7 +13,7 @@ Ex. 2.2
 km_per_mile = 1.61
 km = 10
 miles = km / km_per_mile
-print('There are', miles, 'miles in', km, 'killometers.')
+print('There are', miles, 'miles in', km, 'kilometers.')
 print()
 
 """
