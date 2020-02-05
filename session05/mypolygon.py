@@ -1,5 +1,6 @@
 import turtle
 
+
 # print(andrew)
 
 # for i in range(4):
@@ -36,12 +37,13 @@ def square(t, length):
 
 import math
 
+
 # def circle(t, r):
 #     circumference = 2 * math.pi * r
 #     length = circumference/40
 #     polygon(t, length, 40)
 
-    
+
 # circle(andrew, 100)
 
 # def arc(t, r, angle):
@@ -75,19 +77,21 @@ def polygon(t, length, n):
     """
     Draws a n-sided polygon with given length. t is a turtle.
     """
-    angle = 360/n
+    angle = 360 / n
     polyline(t, n, length, angle)
+
 
 def arc(t, r, angle):
     """
     Draws an arc with radius r and angle. t is a turtle.
     """
-    arc_length = 2 * math.pi * r * angle/360
-    n = int(arc_length/3) + 1
-    step_length = arc_length/n
-    step_angle = angle/n
+    arc_length = 2 * math.pi * r * angle / 360
+    n = int(arc_length / 3) + 1
+    step_length = arc_length / n
+    step_angle = angle / n
 
     polyline(t, n, step_length, step_angle)
+
 
 def circle(t, r):
     """
@@ -96,13 +100,14 @@ def circle(t, r):
     arc(t, r, 360)
 
 
-def main():    
+def main():
     andrew = turtle.Turtle()
     # polygon(andrew, 100, 6) 
     # arc(andrew, 100, 270)
     circle(andrew, 150)
 
     turtle.mainloop()
+
 
 if __name__ == "__main__":
     main()

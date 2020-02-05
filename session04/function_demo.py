@@ -29,6 +29,7 @@ def cat_twice(part1, part2):
     cat = part1 + part2
     print_twice(cat)
 
+
 # cat_twice('Babson', 'College')
 
 # print(cat) 
@@ -40,7 +41,7 @@ def cat_twice(part1, part2):
 
 def give_me_a_break():
     str1 = 'break'
-    return str1 
+    return str1
 
 
 # give_me_a_break()
@@ -51,6 +52,7 @@ def give_me_a_break():
 def give_me_two_breaks():
     str1 = 'break'
     return str1
-    print('another break') 
+    print('another break')
 
-print(give_me_two_breaks()) 
+
+print(give_me_two_breaks())

@@ -1,5 +1,5 @@
-from turtle_shape import arc, circle, move, polygon
 import turtle
+from turtle_shape import arc, circle, move, polygon
 
 
 def draw_two_circles(t):
@@ -13,11 +13,13 @@ def draw_two_circles(t):
     # another large circle
     circle(t, 100)
 
+
 def main():
     t = turtle.Turtle()
     t.speed(0)
     draw_two_circles(t)
-    turtle.mainloop()
+    turtle.Screen().mainloop()
+
 
 if __name__ == "__main__":
     main()
