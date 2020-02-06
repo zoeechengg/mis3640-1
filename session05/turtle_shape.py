@@ -14,6 +14,9 @@ def polyline(t, n, length, angle):
 
 
 def polygon(t, n, length):
+    """
+    Draws a n-sided polygon with given length. t is a turtle.
+    """
     angle = 360.0 / n
     polyline(t, n, length, angle)
 
@@ -23,6 +26,9 @@ def square(t, length):
 
 
 def arc(t, r, angle):
+    """
+    Draws an arc with radius r and angle. t is a turtle.
+    """
     arc_length = 2 * math.pi * r * angle / 360
     n = int(arc_length / 3) + 1
     step_length = arc_length / n
@@ -31,6 +37,9 @@ def arc(t, r, angle):
 
 
 def circle(t, r):
+    """
+    Draws a circle with radius r. t is a turtle.
+    """
     arc(t, r, 360)
 
 

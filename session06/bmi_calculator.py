@@ -2,6 +2,9 @@ import webbrowser
 
 
 def calculate_bmi(weight, height):
+    """
+    calculates BMI based on weight (lb) and height (inch) and prints the category.
+    """
     bmi = 703 * weight / (height * height)
     if bmi <= 18.5:
         print(f"your bmi is {bmi:.1f}. You are underweighted.")
