@@ -6,4 +6,5 @@ one.func()
 if __name__ == "__main__":
     print("two.py is being run directly")
 else:
+    print('name in two.py:', __name__)
     print("two.py is being imported into another module")
