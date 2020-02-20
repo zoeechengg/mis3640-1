@@ -1,9 +1,32 @@
+# import os
+# print(os.getcwd())
+
+# f = open('session09/words.txt')
+# line = f.readline()
+# print(line) 
+
+
+# f = open('session09/words.txt')
+
+# number_of_words = 0
+
+# for line in f:
+#     word = line.strip()
+#     number_of_words += 1
+
+# print(number_of_words) 
+
+
 def find_long_words():
     """
     prints only the words with more than 20 characters
     """
-    pass
-
+    f = open('session09/words.txt')
+    
+    for line in f:
+        word = line.strip()
+        if len(word) > 20:
+            print(word, len(word)) 
 
 # find_long_words()
 
@@ -12,7 +35,12 @@ def has_no_e(word):
     """
     returns True if the given word doesn’t have the letter "e" in it
     """
-    pass
+    # for letter in word:
+    #     if letter.lower() == 'e':
+    #         return False    
+    # return True
+
+    return not 'e' in word.lower() 
 
 
 # print(has_no_e('Babson'))
@@ -24,18 +52,31 @@ def find_words_no_e():
     """
     returns the percentage of the words that don't have the letter "e"
     """
-    pass
+    f = open('session09/words.txt')
+    num_no_e = 0
+    num_words = 0
+    for line in f:
+        num_words += 1
+        word = line.strip()
+        if has_no_e(word):
+            # print(word)
+            num_no_e += 1
+    # print(num_no_e, num_words)
+    return num_no_e/num_words
 
 
 # perc_no_e = find_words_no_e()
-# print(f'The percentage of the words with no "e" is {perc_no_e:.2f}%.')
+# print(f'The percentage of the words with no "e" is {perc_no_e*100:.2f}%.')
 
 
 def avoids(word, forbidden):
     """
     returns True if the given word does not use any of the forbidden letters
     """
-    pass
+    for letter in word:
+        if letter in forbidden:
+            return False
+    return True
 
 
 # print(avoids('Babson', 'abcde'))
@@ -45,21 +86,35 @@ def avoids(word, forbidden):
 
 def find_words_no_vowels():
     """
-    returns the percentage of the words that don't vowel letters
+    returns the percentage of the words that don't have vowel letters
     """
-    pass
+    f = open('session09/words.txt')
+    num_no_e = 0
+    num_words = 0
+    for line in f:
+        num_words += 1
+        word = line.strip()
+        if avoids(word, 'aeiou'):
+            # print(word)
+            num_no_e += 1
+    # print(num_no_e, num_words)
+    return num_no_e/num_words
+
 
 
 # perc_no_vowel = find_words_no_vowels()
-# print(f'The percentage of the words without vowel letters is {perc_no_vowel:.2f}%.')
+# print(f'The percentage of the words without vowel letters is {perc_no_vowel*100:.2f}%.')
 
 
 def uses_only(word, available):
     """
     takes a word and a string of letters, and that returns True if the word
-    contains only letters in the list.
+    contains only letters in the string available.
     """
-    pass
+    for letter in word:
+        if letter not in available:
+            return False
+    return True
 
 
 # print(uses_only('Babson', 'aBbsonxyz'))
@@ -67,10 +122,18 @@ def uses_only(word, available):
 
 
 def find_words_only_use_planet():
-    pass
+    f = open('session09/words.txt')
+    num_words_only_use_planet = 0 
+    for line in f:
+        word = line.strip()
+        if uses_only(word, 'planets'):
+            print(word)
+            num_words_only_use_planet += 1
+    return num_words_only_use_planet 
 
 
-# print('Number of words that use only letters from "planet" is', find_words_only_use_planet())
+
+print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
 
 
 def uses_all(word, required):
