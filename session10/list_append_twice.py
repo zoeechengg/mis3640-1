@@ -5,8 +5,10 @@ def append_twice(a_list, val):
 
 
 # nums = [1, 2, 3]
+# nums_2 = nums
 # append_twice(nums, 4)
 # print(nums)
+# print(nums_2)
 
 
 def append_twice_bad(a_list, val):
