@@ -1,21 +1,25 @@
 import urllib.request
 import json
+import pprint
  
+
 url = "http://api.open-notify.org/astros.json"
  
 with urllib.request.urlopen(url) as f:  
     response_text = f.read().decode('utf-8')
     j = json.loads(response_text)
-    print(j)
+    pprint.pprint(j)
     
 
-
-
-
 # How many people are in the space?
-
+print(j['number']) 
+print(len(j['people']))  
 
 # Who are they?
 
+for person in j['people']:
+    print(person['name'])
 
 # What craft(s) are they in?
+for person in j['people']: 
+    print(f"{person['name']} is in {person['craft']}.")

@@ -10,6 +10,19 @@ def append_twice(a_list, val):
 # print(nums)
 # print(nums_2)
 
+# append_twice(nums_2, 5)
+# print(nums_2)
+# print(nums)
+
+
+
+
+
+
+
+
+
+
 
 def append_twice_bad(a_list, val):
     """Useless!"""
@@ -21,12 +34,25 @@ def append_twice_bad(a_list, val):
 # print(nums)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 def append_twice_good(a_list, val):
     """Returns a new list"""
     a_list = a_list + [val, val]
     return a_list
 
 
-# nums = [1, 2, 3]
-# new_nums = append_twice_good(nums, 4)
-# print(new_nums)
+nums = [1, 2, 3]
+new_nums = append_twice_good(nums, 4)
+print(new_nums)
+print(nums)
