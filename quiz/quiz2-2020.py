@@ -6,6 +6,8 @@ Q1. complete the following function
 
 def is_increasing(data):
     """
+    data: a list of numbers
+    
     Returns True if the list is currently sorted in **strictly** increasing order.
     Returns False otherwise
     """
