@@ -21,7 +21,16 @@ def process_file(filename, skip_header):
     for line in fp:
         if line.startswith('*** END OF THIS PROJECT'):
             break
-        # INSERT CODE BELOW
+        
+        line = line.replace('-', ' ')
+
+        for word in line.split():
+            # word could be 'Sussex.'
+            word = word.strip(strippables)
+            word = word.lower()
+
+            # update the dictionary
+            hist[word] = hist.get(word, 0) + 1
 
     return hist
 
@@ -38,22 +47,35 @@ def skip_gutenberg_header(fp):
 
 def total_words(hist):
     """Returns the total of the frequencies in a histogram."""
-    pass
+    return sum(hist.values())
 
 
 def different_words(hist):
     """Returns the number of different words in a histogram."""
-    pass
+    return len(hist) 
 
 
-def most_common(hist):
+def most_common(hist, excluding_stopwords = False):
     """Makes a list of word-freq pairs in descending order of frequency.
 
     hist: map from word to frequency
 
     returns: list of (frequency, word) pairs
     """
-    pass
+    t = [] 
+
+    stopwords = process_file('session13/stopwords.txt', skip_header=False)
+
+    stopwords = list(stopwords.keys()) 
+
+    for word, freq in hist.items():
+        if excluding_stopwords:
+            if word in stopwords:
+                continue
+
+        t.append((freq, word)) 
+    t.sort(reverse=True)
+    return t
 
 
 def print_most_common(hist, num=10):
@@ -84,13 +106,13 @@ def random_word(hist):
 def main():
     hist = process_file('session13/Pride and Prejudice.txt', skip_header=True)
     # print(hist)
-    # print('Total number of words:', total_words(hist))
-    # print('Number of different words:', different_words(hist))
+    print('Total number of words:', total_words(hist))
+    print('Number of different words:', different_words(hist))
 
-    # t = most_common(hist)
-    # print('The most common words are:')
-    # for freq, word in t[0:20]:
-    #     print(word, '\t', freq)
+    t = most_common(hist, excluding_stopwords=True)
+    print('The most common words are:')
+    for freq, word in t[0:20]:
+        print(word, '\t', freq)
 
     # words = process_file('words.txt', skip_header=False)
 
