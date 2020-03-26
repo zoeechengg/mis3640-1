@@ -7,11 +7,18 @@ def sed(pattern, replace, source, dest):
     source: string filename
     dest: string filename
     """
-    pass
+    
+    with open(source, 'r') as f_r:
+        with open(dest, 'w') as f_w:
+            for line in f_r:
+                new_line = line.replace(pattern, replace)
+                f_w.write(new_line)
+    # f_r.close() # not needed
     
 
-pattern = " man "
-replace = " woman "
+#TODO: use regular expression or other way to particularly locate the word 'man'
+pattern = " man"
+replace = " woman"
 source = "session14/output.txt"
 dest = "session14/output2.txt"
 sed(pattern, replace, source, dest)
