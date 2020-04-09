@@ -22,7 +22,7 @@ class Time:
 
     def __str__(self):
         """Returns a string representation of the time."""
-        return f'{time.hour:02d}:{time.minute:02d}:{time.second:02d}'
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
 
     def print_time(self):
         """Prints a string representation of the time."""
