@@ -4,32 +4,32 @@ from BabsonPerson import BabsonPerson
 
 def main():
     b3 = BabsonPerson("Mark Zuckerberg")
-    b3.setBirthday(5, 14, 84)
+    b3.set_birthday(5, 14, 84)
     b2 = BabsonPerson("Barack Obama")
-    b2.setBirthday(8, 4, 61)
+    b2.set_birthday(8, 4, 61)
     b1 = BabsonPerson("Bill Gates")
-    b1.setBirthday(10, 28, 55)
+    b1.set_birthday(10, 28, 55)
 
-    BabsonPersonList = [b1, b2, b3]
+    babson_person_list = [b1, b2, b3]
 
-    for everyone in BabsonPersonList:
+    for everyone in babson_person_list:
         print(everyone)
         print(everyone.speak('how are you?'))
 
-    BabsonPersonList.sort()
+    babson_person_list.sort()
     print()
     print('After sorting:')
     print()
-    for everyone in BabsonPersonList:
+    for everyone in babson_person_list:
         print(everyone)
         print(everyone.speak('how are you?'))
 
     p4 = Person("Donald Trump")
     p5 = Person("Steve Wozniak")
 
-    personList = BabsonPersonList + [p4, p5]
+    person_list = babson_person_list + [p4, p5]
 
-    for everyone in personList:
+    for everyone in person_list:
         print(everyone)
         print(everyone.speak('how are you?'))
 

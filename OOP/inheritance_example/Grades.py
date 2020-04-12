@@ -7,38 +7,38 @@ class Grades:
     def __init__(self):
         """Create empty grade book"""
         self.students = []  # list of Student objects
-        self.grades = {}  # maps idNum -> list of grades
-        self.isSorted = True  # true if self.students is sorted
+        self.grades = {}  # maps id -> list of grades
+        self.is_sorted = True  # true if self.students is sorted
 
-    def addStudent(self, student):
+    def add_student(self, student):
         """Assumes: student is of type Student
            Add student to the grade book"""
         if student in self.students:
             raise ValueError("Duplicate student")
         self.students.append(student)
-        self.grades[student.idNum] = []
-        self.isSorted = False
+        self.grades[student.id] = []
+        self.is_sorted = False
 
-    def addGrade(self, student, grade):
+    def add_grade(self, student, grade):
         """Assumes: grade is a float
            Add grade to the list of grades for student"""
         try:
-            self.grades[student.idNum].append(grade)
+            self.grades[student.id].append(grade)
         except KeyError:
             raise ValueError("Student not in grade book")
 
-    def getGrades(self, student):
+    def get_grades(self, student):
         """Return a list of grades for student"""
         try:  # return copy of student's grades
-            return self.grades[student.idNum][:]
+            return self.grades[student.id][:]
         except KeyError:
             raise ValueError("Student not in grade book")
 
-    def allStudents(self):
+    def all_students(self):
         """Return a list of the students sorted in the grade book"""
-        if not self.isSorted:
+        if not self.is_sorted:
             self.students.sort()
-            self.isSorted = True
+            self.is_sorted = True
 
         # return copy of list of students
         return self.students[:]
@@ -47,14 +47,14 @@ class Grades:
 def gradeReport(course):
     """Assumes: course if of type grades"""
     report = []
-    for s in course.allStudents():
+    for s in course.all_students():
         tot = 0.0
-        numGrades = 0
-        for g in course.getGrades(s):
+        num_grades = 0
+        for g in course.get_grades(s):
             tot += g
-            numGrades += 1
+            num_grades += 1
         try:
-            average = tot / numGrades
+            average = tot / num_grades
             report.append(str(s) + "'s mean grade is " + str(average))
         except ZeroDivisionError:
             report.append(str(s) + " has no grades")
@@ -62,35 +62,35 @@ def gradeReport(course):
 
 
 def main():
-    ug1 = UG("Krishna Ammini", 2020)
-    ug2 = UG("Emely Cedano", 2020)
-    ug3 = UG("Demi Chu", 2019)
-    ug4 = UG("Nico Paik", 2020)
+    ug1 = UG("Kenzi Fukuda", 2020)
+    ug2 = UG("Ray Hu", 2020)
+    ug3 = UG("Ivy Zhang", 2020)
+    ug4 = UG("Alvie Stoddard", 2021)
 
     g1 = Grad("Matt Damon")
     g2 = Grad("Ben Affleck")
 
     mis3640 = Grades()
-    mis3640.addStudent(g1)
-    mis3640.addStudent(ug2)
-    mis3640.addStudent(ug1)
-    mis3640.addStudent(g2)
-    mis3640.addStudent(ug4)
-    mis3640.addStudent(ug3)
+    mis3640.add_student(g1)
+    mis3640.add_student(ug2)
+    mis3640.add_student(ug1)
+    mis3640.add_student(g2)
+    mis3640.add_student(ug4)
+    mis3640.add_student(ug3)
 
-    mis3640.addGrade(g1, 100)
-    mis3640.addGrade(g2, 25)
-    mis3640.addGrade(ug1, 95)
-    mis3640.addGrade(ug2, 85)
-    mis3640.addGrade(ug3, 75)
+    mis3640.add_grade(g1, 100)
+    mis3640.add_grade(g2, 25)
+    mis3640.add_grade(ug1, 95)
+    mis3640.add_grade(ug2, 85)
+    mis3640.add_grade(ug3, 75)
 
     print("after first test:")
     print(gradeReport(mis3640))
 
-    mis3640.addGrade(g1, 90)
-    mis3640.addGrade(g2, 45)
-    mis3640.addGrade(ug1, 80)
-    mis3640.addGrade(ug2, 75)
+    mis3640.add_grade(g1, 90)
+    mis3640.add_grade(g2, 45)
+    mis3640.add_grade(ug1, 80)
+    mis3640.add_grade(ug2, 75)
 
     print()
     print("after second test:")

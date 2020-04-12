@@ -6,9 +6,9 @@ from Student import UG, Grad
 
 
 def main():
-    s1 = UG("Arteen Zahiri", 2020)
-    s2 = UG("Shirley Ying", 2020)
-    s3 = UG("Shaun Tan", 2021)
+    s1 = UG("Andrew Fu", 2020)
+    s2 = UG("Rachel Song", 2020)
+    s3 = UG("Alvie Stoddard", 2021)
     s4 = Grad("Matt Damon")
     s5 = UG("Mark Zuckerberg", 2019)
     p1 = BabsonPerson("Zhi Li")
@@ -17,18 +17,18 @@ def main():
     q1 = Person("Bill Gates")
     q2 = Person("Beyonce")
 
-    studentList = [s1, s2, s3, s5, s4]
-    BabsonList = studentList + [p1, p2, p3]
-    allList = BabsonList + [q1, q2]
+    student_list = [s1, s2, s3, s5, s4]
+    babson_list = student_list + [p1, p2, p3]
+    all_list = babson_list + [q1, q2]
 
-    # for everyone in studentList:
+    # for everyone in student_list:
     #     print(everyone)
 
-    for everyone in BabsonList:
+    for everyone in babson_list:
         print(everyone)
         print(everyone.speak("Happy holidays!"))
 
-    # for everyone in allList:
+    # for everyone in all_list:
     #     print(everyone)
 
 

@@ -7,11 +7,11 @@ class Student(BabsonPerson):
 
 
 class UG(Student):
-    def __init__(self, name, classYear):
+    def __init__(self, name, class_year):
         BabsonPerson.__init__(self, name)
-        self.year = classYear
+        self.year = class_year
 
-    def getClass(self):
+    def get_class_year(self):
         return self.year
 
     def speak(self, utterance):
@@ -22,21 +22,21 @@ class Grad(Student):
     pass
 
 
-def isStudent(obj):
+def is_student(obj):
     return isinstance(obj, Student)
 
 
 def main():
-    s1 = UG("Arteen Zahiri", 2020)
-    s2 = UG("Shirley Ying", 2020)
-    s3 = UG("Shaun Tan", 2020)
+    s1 = UG("Andrew Fu", 2020)
+    s2 = UG("Rachel Song", 2020)
+    s3 = UG("Alvie Stoddard", 2021)
     s4 = Grad("Matt Damon")
 
-    studentList = [s1, s2, s3, s4]
+    student_list = [s1, s2, s3, s4]
 
     print(s1)
 
-    print(s1.getClass())
+    print(s1.get_class_year())
 
     print(s1.speak("where is the quiz?"))
 
@@ -44,10 +44,10 @@ def main():
 
     print(s4.speak("I am not sure why I am here."))
 
-    print(isStudent(s1))
+    print(is_student(s1))
 
     p1 = Person("Taylor Swift")
-    print(isStudent(p1))
+    print(is_student(p1))
 
 
 if __name__ == "__main__":
