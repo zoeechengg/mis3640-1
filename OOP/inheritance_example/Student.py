@@ -44,10 +44,10 @@ def main():
 
     print(s4.speak("I am not sure why I am here."))
 
-    print(is_student(s1))
+    # print(is_student(s1))
 
-    p1 = Person("Taylor Swift")
-    print(is_student(p1))
+    # p1 = Person("Taylor Swift")
+    # print(is_student(p1))
 
 
 if __name__ == "__main__":

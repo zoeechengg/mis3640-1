@@ -1,6 +1,7 @@
 from Person import Person
 from BabsonPerson import BabsonPerson
 from Student import UG, Grad
+from Professor import Professor
 
 # TODO: add more testing code
 
@@ -11,8 +12,8 @@ def main():
     s3 = UG("Alvie Stoddard", 2021)
     s4 = Grad("Matt Damon")
     s5 = UG("Mark Zuckerberg", 2019)
-    p1 = BabsonPerson("Zhi Li")
-    p2 = BabsonPerson("Shankar")
+    p1 = Professor("Zhi Li", 'MIS 3640')
+    p2 = Professor("Shankar", 'MIS 3690')
     p3 = BabsonPerson("Steve Gordon")
     q1 = Person("Bill Gates")
     q2 = Person("Beyonce")
@@ -24,12 +25,12 @@ def main():
     # for everyone in student_list:
     #     print(everyone)
 
-    for everyone in babson_list:
-        print(everyone)
-        print(everyone.speak("Happy holidays!"))
-
-    # for everyone in all_list:
+    # for everyone in babson_list:
     #     print(everyone)
+    #     print(everyone.speak("Happy holidays!"))
+
+    for everyone in all_list:
+        print(everyone)
 
 
 if __name__ == "__main__":

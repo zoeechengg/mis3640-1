@@ -8,7 +8,7 @@ class Grades:
         """Create empty grade book"""
         self.students = []  # list of Student objects
         self.grades = {}  # maps id -> list of grades
-        self.is_sorted = True  # true if self.students is sorted
+        self.is_sorted = True  # True if self.students is sorted
 
     def add_student(self, student):
         """Assumes: student is of type Student
